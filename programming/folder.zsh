@@ -1,5 +1,5 @@
 
-for value in {1..8}
+for value in {0..8}
 do
   mkdir $value
   cd $value
