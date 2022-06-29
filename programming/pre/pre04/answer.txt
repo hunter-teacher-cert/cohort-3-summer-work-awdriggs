@@ -1,0 +1,14 @@
+5.1: if(x > 0 && x < 10)
+
+5.2: stack diagram
+main
+clink fork 4 
+zoop fred "breakfast" bob 4
+
+5.3: stakc diagram
+main
+nLines n 4
+nLines n 3
+nLines n 2
+nLines n 1
+nLines n 0

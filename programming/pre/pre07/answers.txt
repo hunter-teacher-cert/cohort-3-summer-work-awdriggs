@@ -1,0 +1,5 @@
+The bananas method takes in an array, loops through it and reduces the array to a product of all the items in the array.
+
+The grapefuit methods searches an array for a value, grape, and returns the index of the array if it is found and -1 if the value is not in the array.
+
+The pineapple method takes an array and a serach value and returns the number of times that value is found in the array.

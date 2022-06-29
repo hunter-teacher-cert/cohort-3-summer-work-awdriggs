@@ -1,0 +1,6 @@
+Output would be...
+"No, I wug.
+You wugga wug.
+I wug."
+
+If babble was called at the end of the ping method then you would have an endless loop because baffle calls ping and ping would call baffle. Probably a stack overflow.
