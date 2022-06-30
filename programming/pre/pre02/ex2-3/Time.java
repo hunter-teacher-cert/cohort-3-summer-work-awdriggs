@@ -15,8 +15,9 @@ public class Time {
 
 	double seconds = sinceMidnight;
 	double total = totalSeconds;
-	System.out.println("Percent: " + (seconds / total));
-
+  double percent = (seconds / total) * 100;
+	System.out.printf("Percent: %.02f " , percent);
+  
 	int start = sinceMidnight;
 	hour = 17;
 	min = 22;
