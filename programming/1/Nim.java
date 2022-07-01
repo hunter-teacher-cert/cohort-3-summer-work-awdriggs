@@ -33,7 +33,7 @@ public class Nim {
         stones -= stonesTaken;
       } else {
         System.out.print("Invalid move, try again");
-        break;
+        continue; //not break! continue goes to the next loop
       }
       //check for a win, if stones = 0, last stone was taken.
       if(stones == 0){
