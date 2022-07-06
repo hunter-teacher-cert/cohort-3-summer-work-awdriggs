@@ -16,5 +16,9 @@ public class array2d {
     jag[0] = new int[3];
     jag[1] = new int[4];
     jag[2] = new int[2];
+
+    for(int i = 0; i < jag.length; i++){
+      System.out.println(jag[i]);
+    }
   }
 }

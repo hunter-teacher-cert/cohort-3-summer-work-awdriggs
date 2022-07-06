@@ -207,9 +207,13 @@ explodeAllchar(board,'z') will change board to:
 */
   public static void explodeAllChar(char[][] board, char c)
   {
-    for(int i = 0; i < board.length; i++){
-      for(int j = 0; j < board[i].length; j++){
-        if(board[i][j] == c){
+    //since it simultateously changes and checks will miss squares that were c befor they exploded, 
+    char[][] prevBoard = copyBoard(board);
+    
+    //create a copy first and check the copy
+    for(int i = 0; i < prevBoard.length; i++){
+      for(int j = 0; j < prevBoard[i].length; j++){
+        if(prevBoard[i][j] == c){
           explodeSquare(board, i, j);
         }
       }
@@ -283,7 +287,7 @@ Note that the method has to stop at the bottom of the array.
 
     //setup explodeAllChar test
     b[3][2] = 'Q';
-    b[4][9] = 'Q';
+    b[2][3] = 'Q';
     explodeAllChar(b, 'Q');
     //print after exploding
     printBoard(b);
