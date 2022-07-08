@@ -1,27 +1,27 @@
 /**
- * Rational class by Team BangPi
- * First Last
- * collaborators: First Last, First Last
+ * Rational class by Team 14 
+ * Adam Driggers 
+ * collaborators: David , Elizabeth Last
  */
 
 
 /**
-   class Rational
-   An instance of this class will represent a rational number (p/q s.t. p,q ints && q!=0),
-   and facilitate mathematical operations with another instance of class Rational.
+  class Rational
+  An instance of this class will represent a rational number (p/q s.t. p,q ints && q!=0),
+  and facilitate mathematical operations with another instance of class Rational.
 
-   Basic level (complete all):
-   - toString
-   - default constructor
-   - multiply
-   - divide
+  Basic level (complete all):
+  - toString
+  - default constructor
+  - multiply
+  - divide
 
-   Intermediate level (complete Basic methods plus these methods):
-   - floatValue
-   - overloaded constructor
+  Intermediate level (complete Basic methods plus these methods):
+  - floatValue
+  - overloaded constructor
 
-   Advanced level (complete Basic + Intermediate + these methods):
-   -
+  Advanced level (complete Basic + Intermediate + these methods):
+  -
 
 */
 
@@ -37,7 +37,8 @@ public class Rational
   // creates a new Rational with value 0/1
   public Rational()
   {
-    /* YOUR ELEGANT CODE HERE */
+    _numerator = 0;
+    _denominator = 1;
   }
 
 
@@ -46,7 +47,12 @@ public class Rational
   // if an invalid denominator is attempted, should print a message and set the number to 0/1
   public Rational( int n, int d )
   {
-    /* YOUR ELEGANT CODE HERE */
+    if(d == 0){
+      System.out.println("Invalid denominator! Value set to 0/1");
+    } else {
+      _numerator = n;
+      _denominator = d;
+    }
   }
 
 
@@ -54,16 +60,22 @@ public class Rational
   // returns a string representation of the rational number (formatting of your choice)
   public String toString()
   {
-    /* YOUR ELEGANT CODE HERE */
+    return _numerator + "/" + _denominator;
   }
 
 
   // floatValue
   // returns floating point approximation of the number
-  // uses the most precise floating point primitive
+  // uses the most precise floating point rimitive
   public double floatValue()
   {
-    /* YOUR ELEGANT CODE HERE */
+    //trying to be super clever that was redundent in the end
+    //int whole = _numerator / _denominator;
+    // double decimal = _numerator % _denominator * _numerator/(double)_denominator; //forcing double div
+    // return whole + decimal;
+  
+    //as modelled
+    return (double) _numberator/_denominator;
   }
 
 
@@ -75,15 +87,20 @@ public class Rational
   // need not reduce
   public void multiply( Rational r )
   {
-    /* YOUR ELEGANT CODE HERE */
+    _numerator = _numerator * r._numerator;
+    _denominator = _denominator * r._denominator;
   }
-
 
   // divide
   // same as multiply, except operation is division
   public void divide( Rational r )
   {
-    /* YOUR ELEGANT CODE HERE */
+    if(r._numerator == 0){
+      System.out.println("Can't divide by 0 numerator");
+    } else {
+      _numerator = _numerator * r._denominator;
+      _denominator = _denominator * r._numerator;
+    }
   }
 
 }//end class

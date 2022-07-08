@@ -38,6 +38,12 @@ public class Driver
       r.divide(t);
       System.out.println(r);
       ~~~~~|~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|~~~~~*/
+      Rational r1 = new Rational(1,2);
+      Rational r2 = new Rational(1,3);
+      // r1.multiply(r2);
+      System.out.println(r1.floatValue());
+      System.out.println(r2.floatValue());
+
   }
 
 }//end class
