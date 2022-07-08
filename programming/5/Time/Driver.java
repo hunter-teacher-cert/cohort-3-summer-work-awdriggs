@@ -26,11 +26,21 @@ public class Driver {
 
     //declare a var of appropriate type to assign an instance of Time to
     Time t;
+    Time o;
 
     //assign var the address of a newly-apportioned Time object
     t = new Time(1, 5, 0);
-    System.out.println(t.toString());
+    o = new Time(2, 6, 10);
 
+    System.out.println("time: " + t.toString());
+    System.out.println("other: " + o.toString());
+    // System.out.println("compare " + t.equals(o));
+    
+    o.set(1, 5, 0);
+    
+    System.out.println("other: " + o.toString());
+    System.out.println("compare " + t.equals(o));
+    System.out.println(t.value);
   }//end main()
 
 }//end class
