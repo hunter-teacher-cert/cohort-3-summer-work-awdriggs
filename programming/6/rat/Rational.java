@@ -75,7 +75,7 @@ public class Rational
     // return whole + decimal;
   
     //as modelled
-    return (double) _numberator/_denominator;
+    return (double) _numerator/_denominator;
   }
 
 

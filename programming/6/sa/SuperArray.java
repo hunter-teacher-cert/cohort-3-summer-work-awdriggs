@@ -39,21 +39,18 @@ public class SuperArray
   public SuperArray( int size )
   {
     //init underlying/inner storage of specified capacity
-    /* YOUR SIMPLE+SMART CODE HERE */
-
+    data = new int[size];
     //init instance vars
-    /* YOUR SIMPLE+SMART CODE HERE */
-
+    numberElements = 0;
   }
 
   //default constructor -- initializes capacity to 10
   public SuperArray()
   {
     //init underlying/inner storage of capacity 10
-        /* YOUR SIMPLE+SMART CODE HERE */
-
+    data = new int[10];
     //init instance vars
-        /* YOUR SIMPLE+SMART CODE HERE */
+    numberElements = 0;
   }
 
 
@@ -84,6 +81,7 @@ public class SuperArray
   {
     //return whether this SuperArray instance is empty
     /* YOUR SIMPLE+SMART CODE HERE */
+    return numberElements == 0 ? true : false;
   }
 
 
@@ -91,13 +89,14 @@ public class SuperArray
   {
     //return item at index
     /* YOUR SIMPLE+SMART CODE HERE */
+    return 0; //change later
   }
-
 
   public String toString()
   {
     //return stringified version of this Object
     /* YOUR SIMPLE+SMART CODE HERE */
+    return "";
   }//end toString()
 
 

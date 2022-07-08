@@ -5,7 +5,6 @@ public class SuperArrayDriver
 {
   public static void main( String[] args )
   {
-    /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     System.out.println("Testing default constructor.");
     SuperArray sa = new SuperArray();
 
@@ -14,6 +13,7 @@ public class SuperArrayDriver
     System.out.println("Testing isEmpty (should be true)");
     System.out.println(sa.isEmpty());
 
+    /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     // -----------------------------------------------------------
     // YOUR HOMEGROWN/HOUSEMADE/ROLL-YOUR-OWN TEST METHODS HERE...
     // -----------------------------------------------------------
