@@ -37,13 +37,11 @@ Advanced level (complete Basic + Intermediate + these two methods):
 
 
 public class Time {
-  // Instance Variable(s)
-  // You can change this if you want to use the alternate
-  // implementation of just storing the overall seconds.
+
   int seconds; //number of seconds
-  // default constructor
+               // default constructor
   public Time(){
-    seconds = 0; 
+    seconds = 0;
   }
 
   /**
@@ -53,10 +51,9 @@ Parameters:
 Initialize this instance to represent hrs:mins:secs as the time.
 
 */
-  public Time(int hrs, int mins, int secs){
-    seconds = hours * 3600 + minutes * 60 + seconds;
+  public Time(int hrs, int mins, int sec){
+    seconds = hrs * 3600 + mins * 60 + sec;
   }
-
 
   // Methods
 
@@ -64,11 +61,15 @@ Initialize this instance to represent hrs:mins:secs as the time.
     returns a string representation of the time
     */
   public String toString(){
-    // return(String.format("%02d:%02d:%02d", this.hours, this.minutes, this.seconds)); //better version?
-    // return String.format("%02d", seconds % 3600) + ":" + String.format("%02d", seconds % 60) + ":" + String.format("%02d", seconds % 3600);
-    int hours = seconds % 60
+    //need to convert back to hr:min:sec for printing
+    int hrs = seconds / 3600;
+    int min = seconds % 3600 / 60;
+    int sec = seconds % 3600 % 60;
+
+    return(String.format("%02d:%02d:%02d", hrs, min, sec)); 
+
   }
-   
+
 
 
 
@@ -79,12 +80,8 @@ Parameters:
 
 modifies this instance to represent the time hrs:mins:secs
 */
-  public void set(int hrs, int mins, int secs){
-    // add the code to add the time represented by other
-    // to this instance.
-    hours = hrs; //needed this?
-    minutes = mins;
-    seconds = seconds;
+  public void set(int hrs, int mins, int sec){
+    seconds = hrs * 3600 + mins * 60 + sec;
   }
 
   /**
@@ -97,14 +94,13 @@ the time other.
   public void add(Time other){
     // add the code to add the time represented by other
     // to this instance.
-
-    // add seconds, if seconds > 59, sec = remainder of mod 60, add 1 to hrsU
-    // add mintues, if minutes > 59, min = remainder of mod 60, add 1 to hrsU
-    // add hours, if hours > 23, hrs = remainder of mod 24
-    
-
+    seconds += other.seconds;
+    //check if you have passed a day
+    int day = 86400; //seconds in a day
+    if(seconds > day){ 
+      seconds = seconds % day; //how many seconds are left over in the new day 
+    }
   }
-
 
   /**
 Parameters:
@@ -115,12 +111,8 @@ True if this instance and other represents the same time
 false otherwise.
 */
   public boolean equals(Time other){
-    // your code here)
-    boolean hrs = hours == other.hours;
-    boolean min = minutes == other.minutes;
-    boolean sec = seconds == other.seconds;
 
-    if(hrs && min && sec){
+    if(seconds == other.seconds){
       return true;
     } else {
       return false; // change this
@@ -142,17 +134,7 @@ than the time of other (this < other)
 
 */
   public int compareTo(Time other){
-    // your code here)
-    //convert the times to a single value 
-    // double thisTime//hrs + min/60 + seconds/3600
-    
-    return 0; // change this
-  }
-
-  public int setValue(){
-
-    return hours * 3600 + minutes * 60 + seconds; 
-
+    return seconds - other.seconds; //+ if this > other, - if not, bonus returns the difference 
   }
 
 }//end class

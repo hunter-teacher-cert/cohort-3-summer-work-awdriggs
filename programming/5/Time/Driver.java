@@ -29,18 +29,20 @@ public class Driver {
     Time o;
 
     //assign var the address of a newly-apportioned Time object
-    t = new Time(1, 5, 0);
+    t = new Time(23, 5, 0);
     o = new Time(2, 6, 10);
 
     System.out.println("time: " + t.toString());
     System.out.println("other: " + o.toString());
-    // System.out.println("compare " + t.equals(o));
     
-    o.set(1, 5, 0);
+   // o.set(1, 5, 0);
+    System.out.println("equal? " + t.equals(o));
     
-    System.out.println("other: " + o.toString());
-    System.out.println("compare " + t.equals(o));
-    System.out.println(t.value);
+    System.out.println("compare: " + t.compareTo(o));
+
+    t.add(o);
+    System.out.println(t);
+
   }//end main()
 
 }//end class
