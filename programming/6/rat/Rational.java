@@ -69,13 +69,22 @@ public class Rational
   // uses the most precise floating point rimitive
   public double floatValue()
   {
-    //trying to be super clever that was redundent in the end
-    //int whole = _numerator / _denominator;
-    // double decimal = _numerator % _denominator * _numerator/(double)_denominator; //forcing double div
-    // return whole + decimal;
-  
-    //as modelled
-    return (double) _numerator/_denominator;
+    //trying to be super clever, taught java how to long divide...
+    double decimal = 0.0;
+    int dn = _numerator; //dividend, will upadate in the loop
+    int dv = _denominator; //divisor, never changes
+    double place; 
+    //what power of 10 are we at?
+    for(int i = 0; i <= 16; i++){ //a double has 16 digits
+      int value = dn / dv; //integer divison
+      place = Math.pow(10, i * -1); //what place value are we at? 
+      decimal += value * place; //mutliply value by place value, add to decimal
+      dn = dn % dv * 10; //recalculate the dividend (dn)
+    }
+   
+    return decimal;
+    //as modelled in class
+    // return (double) _numerator/_denominator;
   }
 
 

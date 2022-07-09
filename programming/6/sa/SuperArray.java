@@ -5,17 +5,17 @@
  */
 
 /**
-   SKELETON
-   SuperArray is a wrapper class for an array.
+  SKELETON
+  SuperArray is a wrapper class for an array.
 
-   Provides "pass-thru" accessibility to pre-existing array capabilities:
-   - get/set by index
-   - get length
+  Provides "pass-thru" accessibility to pre-existing array capabilities:
+  - get/set by index
+  - get length
 
-   Adds functionality:
-   - dynamic capacity
-   - auto-grow capacity if necessary
-*/
+  Adds functionality:
+  - dynamic capacity
+  - auto-grow capacity if necessary
+  */
 
 import java.io.*;
 import java.util.*;
@@ -23,10 +23,10 @@ import java.util.*;
 public class SuperArray
 {
   /**
-     SUBGOAL:
-     declare instance vars
-     ...and initialize?
-  */
+SUBGOAL:
+declare instance vars
+...and initialize?
+*/
 
 
   //instance vars
@@ -59,44 +59,50 @@ public class SuperArray
   {
     // test to see if we need to grow, then grow
     /**
-       IMPORTANT:
-       This is the first code that should run in this method
-       but the last code you should write.
-       Implement the rest of this method first,
-       then only write this section once the rest is tested and working.
-    */
+IMPORTANT:
+This is the first code that should run in this method
+but the last code you should write.
+Implement the rest of this method first,
+then only write this section once the rest is tested and working.
+*/
     /* YOUR SIMPLE+SMART CODE HERE */
 
     // add item
-    /* YOUR SIMPLE+SMART CODE HERE */
-
-
-    // increment numberElements
-    /* YOUR SIMPLE+SMART CODE HERE */
-
+    if(numberElements < data.length - 1){ //length or length -1
+      data[numberElements] = value;
+      numberElements++; // increment numberElements
+    } else {
+      grow();
+      add(value); //simple recursion, data should be bigger now
+    }
   }//end add()
 
 
   public boolean isEmpty()
   {
     //return whether this SuperArray instance is empty
-    /* YOUR SIMPLE+SMART CODE HERE */
     return numberElements == 0 ? true : false;
   }
 
 
   public int get(int index)
   {
-    //return item at index
-    /* YOUR SIMPLE+SMART CODE HERE */
-    return 0; //change later
+    return data[index]; //return item at index
   }
 
   public String toString()
   {
-    //return stringified version of this Object
-    /* YOUR SIMPLE+SMART CODE HERE */
-    return "";
+    //return stringified version of this array
+    String arrayString = "["; //print opening bracket
+    for (int i=0; i< numberElements; i++){ //loop through the array
+      arrayString += data[i]; //print the value at current index
+      if (i < numberElements - 1){ //if we are NOT at the last item, add a comma and a space.
+        arrayString += ", ";
+      }
+    }
+    arrayString += "]"; //closing bracket
+
+    return arrayString;
   }//end toString()
 
 
@@ -146,14 +152,17 @@ public class SuperArray
   {
     // create a new array with extra space
     // Q: How did you decide how much to increase capacity by?
-    /* YOUR SIMPLE+SMART CODE HERE */
-
+    // A: 1.5 times bigger, this is what ArrayList does
+    int size = data.length + data.length/2;
+    int[] newArray = new int[size];
     // copy over all the elements from the old array to the new one
-    /* YOUR SIMPLE+SMART CODE HERE */
+    for(int i = 0; i < data.length; i++){
+      newArray[i] = data[i];
+    }
 
     // point data to the new array
     // Q: How does this look when illustrated using encapsulation diagram?
-    /* YOUR SIMPLE+SMART CODE HERE */
+    data = newArray; //reference v. value?
   }//end grow()
 
 }//end class
