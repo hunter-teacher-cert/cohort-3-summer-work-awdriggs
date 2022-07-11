@@ -5,18 +5,18 @@
  */
 
 /**
-   class BinSearch
-   Binary search on array of ints
-*/
+  class BinSearch
+  Binary search on array of ints
+  */
 
 public class BinSearch
 {
 
   /**
-     int binSearch(int[],int) -- searches an array of ints for target int
-     precondition:  input array is sorted in ascending order
-     postcondition: returns index of target, or returns -1 if target not found
-  */
+    int binSearch(int[],int) -- searches an array of ints for target int
+precondition:  input array is sorted in ascending order
+postcondition: returns index of target, or returns -1 if target not found
+*/
   public static int binSearch ( int[] a, int target )
   {
     //Q: Why did the designers of this class opt for 2 binSearch methods instead of 1?
@@ -25,28 +25,30 @@ public class BinSearch
   }
 
 
-  public static int binSearchRec( int[] a, int target,
-                                  int loPos, int hiPos )
+  public static int binSearchRec( int[] a, int target, int loPos, int hiPos )
   {
     int tPos = -1; //init return var to flag/signal value
 
-    int mPos = (lo + hi) / 2; //init tracker var for middle position
-
+    int mPos = (loPos + hiPos) / 2; //init tracker var for middle position
+    System.out.println("mPos: " + mPos);
     //exit case. If lo & hi have crossed, target not present
-    if ( /* YOUR SMART CODE HERE */ )
-      return /* YOUR SMART CODE HERE */ ;
-
+    if (loPos > hiPos )
+      return -1;
     // target found
-    if ( /* YOUR SMART CODE HERE */ ) {
-      /* YOUR SMART CODE HERE */
+    if (a[mPos] == target) { //what shoudl this check be?
+      return mPos;
     }
     // value at mid index higher than target
-    else if ( /* YOUR SMART CODE HERE */ ) {
-      /* YOUR SMART CODE HERE */
+    else if (a[mPos] > target) {
+      // low should stay the same.
+      // high position should be the middle
+      return binSearchRec(a, target, loPos, mPos-1);
     }
     // value at mid index lower than target
-    else if ( /* YOUR SMART CODE HERE */ ) {
-      /* YOUR SMART CODE HERE */
+    else if (a[mPos] < target) {
+      //new low position should be middle position
+      //high should stay the same.
+      return binSearchRec(a, target, mPos+1, hiPos);
     }
 
     return tPos;
@@ -87,7 +89,6 @@ public class BinSearch
   public static void main ( String[] args )
   {
     //move the bar down to uncover tests in succession...
-    /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     System.out.println("\nNow testing binSearch on int array...");
 
     //Declare and initialize array of ints
@@ -104,9 +105,14 @@ public class BinSearch
       iArr3[i] = i * 2;
     }
 
-    //printArray( iArr3 );
+    // printArray( iArr3 );
     System.out.println( "iArr3 sorted? -- " + isSorted(iArr3) );
+    System.out.println("search for 6");
+    System.out.println( binSearchRec(iArr2, 6, 0, iArr2.length-1) );
+    System.out.println("search for 42");
+    System.out.println( binSearchRec(iArr2, 42, 0, iArr2.length-1) );
 
+    /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     //search for 6 in array
     System.out.println( binSearch(iArr2,2) );
     System.out.println( binSearch(iArr2,4) );

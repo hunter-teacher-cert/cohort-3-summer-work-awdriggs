@@ -80,8 +80,10 @@ then only write this section once the rest is tested and working.
 
   public boolean isEmpty()
   {
+    //@tofr response... return numberElements == 0; //even better!
     //return whether this SuperArray instance is empty
     return numberElements == 0 ? true : false;
+    //@tofr response... return numberElements == 0; //even better!
   }
 
 
