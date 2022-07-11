@@ -6,23 +6,38 @@ public class SuperArrayDriver
   public static void main( String[] args )
   {
     System.out.println("Testing default constructor.");
-    SuperArray sa = new SuperArray(10);
+    SuperArray sa = new SuperArray(5);
     
     System.out.println(sa);
     // sa.add(5);
     // sa.add(12);
 
     System.out.println("Testing overfill (calling grow() in add)");
-    for (int i=0; i<15; i++) {
+    for (int i=0; i<5; i++) {
       sa.add(i);
-    }//for i
+    }
 
+    // System.out.println(sa);
+    // sa.add(5);
+    // sa.add(12);
+    // System.out.println(sa);
+     
+    System.out.println("\nTesting remove at 0, 5, and 15 (end)");
+    // sa.remove(0);
     System.out.println(sa);
+    System.out.println(sa.debug());
+
+    System.out.println("\nTesting add at index 1, (end)");
+    sa.add(1, 100);
+    System.out.println(sa);
+    System.out.println(sa.debug());
     sa.add(5);
+    System.out.println(sa);
+    System.out.println(sa.debug());
     sa.add(12);
     System.out.println(sa);
-     
-     
+    System.out.println(sa.debug());
+
     /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     System.out.println("Testing empty print:");
     System.out.println(sa);

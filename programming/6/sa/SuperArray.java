@@ -68,7 +68,7 @@ then only write this section once the rest is tested and working.
     /* YOUR SIMPLE+SMART CODE HERE */
 
     // add item
-    if(numberElements < data.length - 1){ //length or length -1
+    if(numberElements <= data.length - 1){ //length or length -1
       data[numberElements] = value;
       numberElements++; // increment numberElements
     } else {
@@ -124,27 +124,37 @@ then only write this section once the rest is tested and working.
 
   public void remove(int index)
   {
-    // shift items down to remove the item at index
-    /* YOUR SIMPLE+SMART CODE HERE */
-
-    // subtract fom numElements;
-    /* YOUR SIMPLE+SMART CODE HERE */
+    for(int i = index; i < numberElements; i++){
+      data[i] = data[i+1]; // shift items down to remove the item at index
+    }
+     
+    data[numberElements] = 0; //make the last one a zero for safety
+    numberElements--; // subtract fom numElements;
   }
 
 
   public void add(int index, int value)
   {
+    
     // see if there's enough room
+    if(numberElements <= data.length - 1){ //length or length -1
+      // data[numberElements] = value;
+      // int[] temp = new int[numberElements - index]; //hold on to elements from index to end of array
+      //for(int i = //loop through th 
+      for(int i = numberElements; i > index; i--){
+        data[i] = data[i-1]; // shift elements toward the end of the array
+      }
+      data[index] = value; // insert new element
+      numberElements++; // increment numberElements
+    } else {
+      grow();
+      add(index, value); //simple recursion, data should be bigger now
+    }
+
+
     /* YOUR SIMPLE+SMART CODE HERE */
 
-    // shift elements toward the end of the array
-    /* YOUR SIMPLE+SMART CODE HERE */
 
-    // insert new element
-    /* YOUR SIMPLE+SMART CODE HERE */
-
-    // increment numElements
-    /* YOUR SIMPLE+SMART CODE HERE */
   }
 
 
