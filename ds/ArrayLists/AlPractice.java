@@ -96,7 +96,7 @@ Postconditions:
   public static void removeValue(ArrayList<Integer> dataList, int valueToRemove){
     //remove(object) will return true if an object has been removed.
     Integer intObj = new Integer(valueToRemove);
-
+    // Integer.valueOf(valueToRemove)
     boolean keepGoing = true;
 
     while(keepGoing == true){
@@ -149,9 +149,8 @@ Postconditions:
   public static ArrayList<Integer> zipLists(ArrayList<Integer>ListA,ArrayList<Integer>ListB){
     ArrayList<Integer> zipped = new ArrayList<Integer>();
     //figure out which list is longer
-    // int maxIndex = 0;
     int maxIndex = ListA.size() >= ListB.size() ? ListA.size() : ListB.size();
-    //stupid test
+
     for(int i = 0; i < maxIndex; i++){
       if(i < ListA.size()){
         zipped.add(ListA.get(i));
@@ -164,9 +163,6 @@ Postconditions:
 
     return zipped;//placeholder to compile.
   }
-
-
-
 
   public static void main(String[] args) {
 
