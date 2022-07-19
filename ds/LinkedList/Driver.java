@@ -48,5 +48,13 @@ public class Driver{
     arrayString += "]"; 
 
     System.out.println(arrayString); 
+
+    //test remove
+    l.remove(0);
+    System.out.println(l);
+    l.remove(l.size()-1);
+    System.out.println(l);
+    l.remove(2);
+    System.out.println(l);
   }
 }
