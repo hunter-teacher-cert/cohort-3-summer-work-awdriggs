@@ -31,5 +31,9 @@ public class Driver{
 
     l.add(l.size(), "end"); //because "add" addss at the index, to add at the very end just use the size
     System.out.println(l);    
+
+    System.out.println(l.indexOf("b"));
+    System.out.println(l.indexOf("start"));
+    System.out.println(l.indexOf("adam"));
   }
 }

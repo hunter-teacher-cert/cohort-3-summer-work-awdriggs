@@ -124,7 +124,6 @@ public class LinkedList{
       for(int i = 0; i < index; i++){
         nodeBeforeWalker = walker;//brilliant! this node will always point at walker before walker gets updated
         walker = walker.getNext();
-        System.out.println("next walker");
       }
       //walker is at index - the below line is the PIVOTAL part of this method
       nodeToAdd = new Node(value, walker); //this is the new node to insert
@@ -132,7 +131,6 @@ public class LinkedList{
       nodeBeforeWalker.setNext(nodeToAdd);
     }
   }
-
 
   /**
   Returns the index (location) of the first node in the list
@@ -148,17 +146,21 @@ public class LinkedList{
     //iterate through the L.L. with walker node
     //if the walker's data == value, then return the index of the walker
     Node walker = head;
-    int index = -1; //-1 would mean not in the linked list 
+    int index = 0; //-1 would mean not in the linked list 
 
     //loop through the L.L. until null; //if walker is not equal to null, keep looking for the value.
     while(walker != null){
       //check to see if walker's value matches the one we are looking for
+      if(walker.getData() == value){
+        return index; 
+      }
       
-      
+      index++; 
       walker = walker.getNext(); //update walker
     } 
-    
-    return index; //send back the index 
+   
+    //if you get to here, no index was found
+    return -1; //send back -1 
   }
 
 
