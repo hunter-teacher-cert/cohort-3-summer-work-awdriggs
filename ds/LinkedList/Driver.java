@@ -32,8 +32,21 @@ public class Driver{
     l.add(l.size(), "end"); //because "add" addss at the index, to add at the very end just use the size
     System.out.println(l);    
 
-    System.out.println(l.indexOf("b"));
-    System.out.println(l.indexOf("start"));
-    System.out.println(l.indexOf("adam"));
+    System.out.println(l.indexOf("hello")); //test indexOf
+    System.out.println(l.indexOf("adam")); //test for something not found
+
+    //test toArray
+    String[] tester = l.toArray();
+    //copying over the print array code we wrote a long time ago.
+    String arrayString = "["; //print opening bracket
+    for (int i=0; i< tester.length; i++){ //loop through the array
+      arrayString += tester[i]; //print the value at current index
+      if (i < tester.length - 1){ //if we are NOT at the last item, add a comma and a space.
+        arrayString += ", ";
+      }
+    }
+    arrayString += "]"; 
+
+    System.out.println(arrayString); 
   }
 }
