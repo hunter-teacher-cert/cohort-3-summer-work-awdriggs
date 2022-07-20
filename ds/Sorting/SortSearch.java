@@ -22,7 +22,6 @@ import java.util.*;
    */
 
 public class SortSearch{
-
   /* Sort project starts here */
 
   /* Instance Variables */
@@ -52,8 +51,6 @@ public class SortSearch{
     return this.data.get(index);
   }
 
-
-
   /*
      return the index of the smallest data idem from index start to the end
      of the ArrayList. If there are multiple of the smallest value,
@@ -78,12 +75,9 @@ public class SortSearch{
       {
         smallIndex = i;
       }
-
     }
-
     return smallIndex;
   }
-
 
   /**
     Implement the selection sort algorithm by sorting the ArrayList
@@ -93,8 +87,6 @@ Loop a variable that represents the ArrayList index from
 0 to the end of the ArrayList.
 For each index, find the smallest from that Location
 to the end of the array and swap it with that index.
-
-
 */
   public void sort()
   {
@@ -108,12 +100,8 @@ to the end of the array and swap it with that index.
       data.set(i, data.get(smallIndex));
       //give data the value at smallest index
       data.set(smallIndex, temp);
-
     }
-
   }
-
-
 
   /* Search project starts here */
 
@@ -125,9 +113,13 @@ to the end of the array and swap it with that index.
     This algorithm works on any ArrayList.
     */
   public int linearSearch(int value){
-
-
-    return 0; // replace this return
+    //go through the array list
+    for(int i =0; i < data.size()-1; i++){
+      if(data.get(i)== value){
+        return i; //this will stop the search at the first occurence.
+      }
+    }
+    return -1; // replace this return
   }
 
   /**
@@ -138,12 +130,33 @@ to the end of the array and swap it with that index.
   public int binarySearch(int value){
 
     // create assign variables  representing the high, low and middle indices
+    int high = data.size()-1;
+    int low = 0;
+    int middle = (high + low)/2;
+
     // while we're not done:
-    //   if the item is at data.get(middle), return middle
-    //   otherwise, update high, low, and middle
-
-    return 0;
-
+    //check for a cross in high and low
+    //ex [1, 3, 5], search for 2
+    while(low < high){
+      //System.out.println("low: " + low + " middle: "+ middle + " high: " + high);
+      //   if the item is at data.get(middle), return middle
+      if(data.get(middle) == value){
+        return middle;
+      } else {
+        //   otherwise, update high, low, and middle
+        if(data.get(middle) > value){
+          //if middle is greater than value, search lower half
+          high = middle - 1;
+          middle = (high + low)/2;
+          //low stays the same.
+        } else {
+          //if middle is less than value, search upper half
+          low = middle + 1;
+          middle = (high + low)/2;
+        }
+      }
+    }
+    return -1; //item not found
   }
 
   /**
@@ -151,26 +164,41 @@ to the end of the array and swap it with that index.
 
     This algorithm only works on sorted ArrayLists.
     */
-
   public int binarySearchRecursive(int value, int lowIndex, int highIndex){
-
-    // refer to class discussion
-
-    return 0;
+    //won't return the first occurence if the number in the middle matches the case the first time.
+    int midIndex = (lowIndex + highIndex) / 2; //init tracker var for middle position
+                                               //exit case. If lo & hi have crossed, target not present
+    if (lowIndex > highIndex){
+      return -1;
+    } else {
+      //target
+      int targetIndex = -1;
+      if (data.get(midIndex) == value) {  // target found
+        targetIndex = midIndex;
+        binarySearchRecursive(value, lowIndex, midIndex-1); //see if there is a lpower index!
+      }
+      // value at mid index higher than target
+      else if (data.get(midIndex) > value) {
+        // low should stay the same.
+        // high position should be the middle
+        return binarySearchRecursive(value, lowIndex, midIndex-1);
+      }
+      // value at mid index lower than target
+      else  {
+        //new low position should be middle position
+        //high should stay the same.
+        return binarySearchRecursive(value, midIndex+1, highIndex);
+      }
+      return targetIndex;
+    }
 
   }
-
 
   public String toString(){
     return ""+data;
   };
 
-
   public void builtinSort(){
     Collections.sort(data);
-
   }
-
-
-
 }
