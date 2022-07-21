@@ -137,7 +137,7 @@ to the end of the array and swap it with that index.
     // while we're not done:
     //check for a cross in high and low
     //ex [1, 3, 5], search for 2
-    while(low < high){
+    while(!(low > high)){ //low is not greater than high
       //System.out.println("low: " + low + " middle: "+ middle + " high: " + high);
       //   if the item is at data.get(middle), return middle
       if(data.get(middle) == value){
@@ -175,7 +175,7 @@ to the end of the array and swap it with that index.
       int targetIndex = -1;
       if (data.get(midIndex) == value) {  // target found
         targetIndex = midIndex;
-        binarySearchRecursive(value, lowIndex, midIndex-1); //see if there is a lpower index!
+        // binarySearchRecursive(value, lowIndex, midIndex-1); //see if there is a lpower index!
       }
       // value at mid index higher than target
       else if (data.get(midIndex) > value) {
