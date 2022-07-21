@@ -3,6 +3,7 @@ Adam and Patti
 
 ## Task
 Code a working traffic light that turns specific lights based on the mouse position.
+
 ![Traffic Light](traffic_light.gif)
 
 ## Learning Targets
