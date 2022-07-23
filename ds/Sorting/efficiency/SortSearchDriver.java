@@ -6,33 +6,37 @@ public class SortSearchDriver {
 
 
 	// Uncomment these to test part 1
-	int size = 1000000;
-	SortSearch ss = new SortSearch(size);
+	// int size = Integer.MAX_VALUE;
+  int size = 10000000;
+	SortSearch ss = new SortSearch(size, false); //random or no?
 	//System.out.println(ss);
 	
   long start,elapsed;
 
-  System.out.println("Testing Linear Search");
-	start = System.currentTimeMillis();
-  System.out.println("start " + start);
-  // ss.linearSearch(12);
-  System.out.println(ss.linearSearch(12));
-	elapsed = System.currentTimeMillis() - start;   
-	System.out.println("Size: " + size + " Time: " + elapsed);
+  //System.out.println("Testing Linear Search");
+	//start = System.currentTimeMillis();
+  //System.out.println("start " + start);
+  //// ss.linearSearch(12);
+  //System.out.println(ss.linearSearch(12));
+	//elapsed = System.currentTimeMillis() - start;   
+	//System.out.println("Size: " + size + " Time: " + elapsed);
 
-  System.out.println("Testing Sort");
-  start = System.currentTimeMillis();
-  System.out.println("start " + start);
-	ss.sort();
-  //System.out.println(ss);
-	elapsed = System.currentTimeMillis() - start;
-	System.out.println("Size: " + size + " Time: " + elapsed);
+  //System.out.println("Testing Sort");
+  //start = System.currentTimeMillis();
+  //System.out.println("start " + start);
+	//ss.sort();
+  ////System.out.println(ss);
+	//elapsed = System.currentTimeMillis() - start;
+	//System.out.println("Size: " + size + " Time: " + elapsed);
+
+ int last = ss.get(size - 2); 
 
   System.out.println("Testing Binary Search");
   start = System.currentTimeMillis();
+  // start = System.nanoTime();
   System.out.println("start " + start);
   // ss.binarySearch(12);
-  System.out.println(ss.binarySearch(12));
+  System.out.println(ss.binarySearch(last));
 	elapsed = System.currentTimeMillis() - start; //only the binary search time 
 	System.out.println("Size: " + size + " Time: " + elapsed);
 
@@ -40,11 +44,11 @@ public class SortSearchDriver {
   start = System.currentTimeMillis();
   System.out.println("start " + start);
   // ss.binarySearchRecursive(12, 0, size-1);
-  System.out.println(ss.binarySearchRecursive(12, 0, size-1));
+  System.out.println(ss.binarySearchRecursive(last, 0, size-1));
 	elapsed = System.currentTimeMillis() - start; //only the recursive binary search time 
 	System.out.println("Size: " + size + " Time: " + elapsed);
 
-      
+  
 		
 	// // Uncomment these to test part 2
 
