@@ -7,7 +7,7 @@ public class SortSearchDriver {
 
     // // Uncomment these to test part 1
     // System.out.println("\nA new ArrayList ss with 20 random integers:");
-    SortSearch ss = new SortSearch(20);
+    SortSearch ss = new SortSearch(30);
     Random r = new Random();
     // System.out.println(ss);
     
@@ -48,6 +48,7 @@ public class SortSearchDriver {
     // System.out.println("Binary (r) search result (for 19): "
     //                    + ss.binarySearchRecursive(19,0,ss.getSize()-1));
     ss.sort();
-    ss.binarySearchRecursive(r.nextInt(20),0,ss.getSize()-1);
+    int index = ss.binarySearchRecursive(21,0,ss.getSize()-1);
+    System.out.println("Index: " + index);
   }
 }

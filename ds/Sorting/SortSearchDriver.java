@@ -9,7 +9,7 @@ public class SortSearchDriver {
 
     // Uncomment these to test part 1
 
-    SortSearch ss = new SortSearch(20);
+    // SortSearch ss = new SortSearch(20);
     //System.out.println(ss);
     //ss = new SortSearch(); //testing undefined length
     //System.out.println(ss);
@@ -26,18 +26,24 @@ public class SortSearchDriver {
 
     // Uncomment these to test part 3
 
-    System.out.println(ss);
-    ss.sort();
-    System.out.println(ss);
+    // System.out.println(ss);
+    // ss.sort();
+    // System.out.println(ss);
 
     // System.out.println("testing linear search");
     // System.out.println(ss.linearSearch(10));
     // System.out.println(ss.linearSearch(19)); //should print 7
     // System.out.println(ss.linearSearch(13));
 
-    System.out.println(ss.binarySearch(10));
-    System.out.println(ss.binarySearchRecursive(10, 0, 20));
+    // System.out.println(ss.binarySearch(10));
+    // System.out.println(ss.binarySearchRecursive(10, 0, 20));
+
+    ArrayList<Integer> a = ss.buildIncreasingList(20);
+    System.out.println(a);
+
+    // build a second Arralist here
 
 
+    // test your merge routine here
   }
 }

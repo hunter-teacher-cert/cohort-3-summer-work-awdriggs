@@ -1,0 +1,15 @@
+Adam Driggers
+Methods Summer 2022
+GALLERY TOUR LOG
+
+DISCOVERIES:
+* Elizabeth chose a nice clean Jekyll file 
+* Jenna, good use of tables [here](https://jenna0704.github.io/nycscertweb/)  
+* Kerra, putting in nice illustrative code blocks
+
+LINGERING QUESTIONS:
+* Why did we separate this from our classwork repo? We could have made use of the docs folder to separate out our work from our display pages. 
+
+COMMENTS/CONCERNS/OTHER:
+* Lots of sites, including mine, don't make clear who the author is.
+
