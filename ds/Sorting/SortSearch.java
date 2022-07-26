@@ -32,11 +32,10 @@ public class SortSearch{
 
   public SortSearch(){
     data = new ArrayList<Integer>();
-    //rewriting default to just setup a sortsearch class
-    // r = new Random();
-    // for (int i=0;i<15;i++){
-    //   data.add(r.nextInt(20));
-    // }
+    r = new Random();
+    for (int i=0;i<15;i++){
+      data.add(r.nextInt(20));
+    }
   }
 
   public SortSearch(int size){
@@ -251,7 +250,7 @@ The new list will contain:
     }
     //if one of the lists is shorter,
     //add the data until the index is at size
-    while(index1 < list2.size()){
+    while(index1 < list1.size()){
       sorted.add(list1.get(index1));
       index1++;
     }
@@ -262,5 +261,34 @@ The new list will contain:
     }
 
     return sorted;
+  }
+
+  public ArrayList<Integer> mergeSort(ArrayList<Integer> list){
+    // check for base case
+    if (list.size() < 2){
+      return list;
+    } else { // if not the base case
+      //using sublist to split the lists
+      //ArrayList implements the List class, getting some of its functions?
+      //the subList function of an arraylist returns a new List object, not a new ArrayList
+      //BUT an arraylist can be constructed by a List obj.
+      ArrayList<Integer> left = new ArrayList<Integer>(list.subList(0, list.size()/2));
+      ArrayList<Integer> right = new ArrayList<Integer>(list.subList(list.size()/2, list.size()));
+      
+      //Testing out split
+      // System.out.println("left: " + left);
+      // System.out.println(left.size());
+      // System.out.println("right: " + right);
+      // System.out.println(right.size());
+  
+      left = mergeSort(left); // meregSort the left half
+      right = mergeSort(right); // mergeSort the right half
+
+      return merge(left, right); // merge them together into a new list, means call the merge function that we wrote!
+    }
+  }
+
+  public void msort(){
+      data =  mergeSort(data);
   }
 }
