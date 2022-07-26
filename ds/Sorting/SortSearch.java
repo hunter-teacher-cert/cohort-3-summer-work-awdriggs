@@ -32,10 +32,11 @@ public class SortSearch{
 
   public SortSearch(){
     data = new ArrayList<Integer>();
-    r = new Random();
-    for (int i=0;i<15;i++){
-      data.add(r.nextInt(20));
-    }
+    //rewriting default to just setup a sortsearch class
+    // r = new Random();
+    // for (int i=0;i<15;i++){
+    //   data.add(r.nextInt(20));
+    // }
   }
 
   public SortSearch(int size){
@@ -231,11 +232,35 @@ The new list will contain:
 
 */
 
-  public ArrayList<Integer> merge(ArrayList<Integer> list1,
-      ArrayList<Integer> list2){
+  public ArrayList<Integer> merge(ArrayList<Integer> list1, ArrayList<Integer> list2){
+    ArrayList<Integer> sorted = new ArrayList<Integer>();
+    int index1 = 0; //keeping track of where we should be in each list
+    int index2 = 0;
 
     // code for merge
+    // step through the two lists together, comparing the items at respective indexes
+    while(index1 < list1.size() && index2 < list2.size()){
+      //compare the values at current index for one and two
+      if(list1.get(index1) < list2.get(index2)){
+        sorted.add(list1.get(index1));
+        index1++;
+      } else {
+        sorted.add(list2.get(index2));
+        index2++;
+      }
+    }
+    //if one of the lists is shorter,
+    //add the data until the index is at size
+    while(index1 < list2.size()){
+      sorted.add(list1.get(index1));
+      index1++;
+    }
 
-    return new ArrayList<Integer>(); // replace this line
-  
+    while(index2 < list2.size()){
+      sorted.add(list2.get(index2));
+      index2++;
+    }
+
+    return sorted;
+  }
 }
