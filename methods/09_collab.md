@@ -13,7 +13,7 @@ From [TestBytes](https://www.testbytes.net/blog/what-is-play-testing/)
 Students will use playtesting to get feedback on their games.
 
 ## The Scenario
-At the end of several weeks of intense game development using [Make Code Arcade]() students are in need of some play testing.
+At the end of several weeks of intense game development using [Make Code Arcade](https://arcade.makecode.com/) students are in need of some play testing.
 
 ## The Setup
 * Students are paired with a random partner who is unfamiliar with each others games.
