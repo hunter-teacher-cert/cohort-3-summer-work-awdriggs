@@ -1,1 +1,11 @@
-![Happy](https://c.tenor.com/LX846cKh4nUAAAAd/happy-emotional.gif)
+# Deliverables
+*[Sample Lesson](01_Lesson.pdf)
+*[Live Code Lesson](02_livecode_java.java)
+*[Tracing Lesson](03_trace.txt)
+*[Unplugged Activity](04_unplugged.md)
+*[Scaffold Techniques](05_scaffoldtechniques.md)
+*[Scaffolded Code Activity](06_scaffold_activity.md)
+*[Scaffolded Activity Solution](06_scaffold_solution.js)
+*[Gallery Walk Reflection](07_gallerywalk.txt)
+*[Debug Activity](08_debug.md)
+*[Collaborative Activity](09_collab.md)

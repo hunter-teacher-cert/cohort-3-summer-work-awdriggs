@@ -3,7 +3,7 @@
 ## What is a bug?
 The term "bug" to describe problems and has been a part of engineering jargon since the 1870s. The term was used before computers were invented.
 
-![Grace Hopper's Bug](bug.jpeg)
+![Grace Hopper's Bug](imgs/bug.jpeg)
 In 1946, when Grace Hopper traced an error in the Mark II, and early computer, to a moth trapped in the computer which caused a problem. This bug was carefully removed and taped to the log book. From this first actual bug, today we call errors or glitches in a program a bug.
 
 source: [Wikipedia](https://en.wikipedia.org/wiki/Software_bug#:~:text=Operators%20traced%20an%20error%20in,in%20a%20program%20a%20bug.)

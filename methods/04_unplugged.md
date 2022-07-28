@@ -1,7 +1,7 @@
 # CS Unplugged Activity Plan
 #### by MiddleSchool_i_sHell
 Roster: Saranii Muller, Patti Elfers Wygand, Adam Driggers, Greg Sciame
-![Draw a Square](square.gif)
+![Draw a Square](imgs/square.gif)
 
 
 # Looping Coding Blocks (Unplugged)
@@ -36,5 +36,5 @@ Programs often repeat certain movements numerous times. They often lead into con
 Done already? Looking to be xtra? (this is entirely optional... only if you see a place where an image could help in a big way, and you have some time to noodle with your markdown)
 
 A not-too-bad how-to guide for inserting images in your markdown: https://www.foxinfotech.in/2019/12/github-markdown-add-an-image-to-readme-md-file.html
-![kitten](kitten.jpeg)
+![kitten](imgs/kitten.jpeg)
 

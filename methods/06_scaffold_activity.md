@@ -4,7 +4,7 @@ Adam and Patti
 ## Task
 Code a working traffic light that turns specific lights based on the mouse position.
 
-![Traffic Light](traffic_light.gif)
+![Traffic Light](imgs/traffic_light.gif)
 
 ## Learning Targets
 * I can code conditions using p5 built in variables.

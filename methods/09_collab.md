@@ -6,7 +6,7 @@ I can <u>get</u> feedback on my game through "play testing."
 I can <u>give</u> feedback on others' games through "play testing."
 
 ## The Collaboration Aspect
-"Playtesting is a commonly used testing technique for games. This quality control method repeats itself at many points of the gaming application/software design process. A nominated group of players play on-going versions of a game to find failings in the game, and to discover bugs and gaming glitches. It also focuses on describing out the unclear points, increasing fun features or decreasing boredom, etc."
+> "Playtesting is a commonly used testing technique for games. This quality control method repeats itself at many points of the gaming application/software design process. A nominated group of players play on-going versions of a game to find failings in the game, and to discover bugs and gaming glitches. It also focuses on describing out the unclear points, increasing fun features or decreasing boredom, etc."
 
 From [TestBytes](https://www.testbytes.net/blog/what-is-play-testing/)
 
